@@ -8,4 +8,8 @@ def index():
 
 @app.route("/bootstrap")
 def bootstrap():
-    return render_template("index.html")
+    name = "Steve"
+    chinese = 89
+    english = 95
+    math = 72
+    return render_template("index.html", name=name, chinese=chinese, english=english, math=math)
