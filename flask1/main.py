@@ -25,3 +25,15 @@ def bootstrap():
 @app.route("/home")
 def home():
     return render_template("home.html")
+
+@app.route("/item1")
+def item1():
+    return render_template("item1.html")
+
+@app.route("/item2")
+def item2():
+    return render_template("item2.html")
+
+@app.route("/item3")
+def item3():
+    return render_template("item3.html")
