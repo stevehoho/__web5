@@ -24,16 +24,16 @@ def bootstrap():
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", title="5g新時代")
 
 @app.route("/item1")
 def item1():
-    return render_template("item1.html")
+    return render_template("item1.html", title="何謂5g?")
 
 @app.route("/item2")
 def item2():
-    return render_template("item2.html")
+    return render_template("item2.html", title="醫療互聯網")
 
 @app.route("/item3")
 def item3():
-    return render_template("item3.html")
+    return render_template("item3.html", title="智慧製造")
