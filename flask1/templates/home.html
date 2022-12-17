@@ -14,9 +14,9 @@
 <div class="px-4 py-5 my-2 text-center">
     <h1 class="display-5 fw-bold">5g新時代</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-2 fs-5">一個城市的進步樣態，隨著經濟與科技發展而改變。</p>
-        <p class="lead mb-2 fs-5">當5g網路結合互聯網裝置，未來將產生眾多新創服務，改變城市面貌。</p>
-        <p class="lead mb-2 fs-5">透過5g智慧智能互聯網，政府能快速整合服務。</p>
+        {% for banner in banners %}
+        <p class="lead mb-2 fs-5">{{banner}}</p>
+    {% endfor %}      
     </div>
 </div>
 {% endblock %}
