@@ -1,15 +1,26 @@
-from flask import Flask ,render_template
+from flask import Flask,render_template
+import xlrd
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "<h1> hello world </h1>"
+    return "<h1>Hello! Flask!</h1>"
+
 
 @app.route("/bootstrap")
 def bootstrap():
-    name = "Steve"
-    chinese = 89
-    english = 95
-    math = 72
-    return render_template("index.html", name=name, chinese=chinese, english=english, math=math)
+    book = xlrd.open_workbook("static/others/student.xls")
+    sh = book.sheet_by_index(0)
+    #print(sh.cell_value(rowx=0, colx=1))
+    student = {
+        "name":sh.cell_value(rowx=0, colx=1),
+        "chinese":sh.cell_value(rowx=1, colx=1),
+        "english":sh.cell_value(rowx=2, colx=1),
+        "math":sh.cell_value(rowx=3, colx=1)
+    }    
+    return render_template("index.html",**student)
+
+@app.route("/base")
+def base():
+    return render_template("base.html")
