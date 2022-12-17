@@ -10,7 +10,7 @@ def index():
 
 @app.route("/bootstrap")
 def bootstrap():
-    book = xlrd.open_workbook("static/others/student.xls")
+    book = xlrd.open_workbook("static/others/student.xlsx")
     sh = book.sheet_by_index(0)
     #print(sh.cell_value(rowx=0, colx=1))
     student = {
